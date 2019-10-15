@@ -6,20 +6,20 @@
     <title>My day</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap" rel="stylesheet">
-<body onload="doStart()" id="body">
+<body onload="doStart()" id="body" class="default">
     <header>
-        <form>
+        <form onsubmit="doChangeTitle(event)">
             <label for="changeTitle">
                 <input type="text" name="changeTitle" id="changeTitle" placeholder="Change title name...">
                 <input type="submit" value="Submit" id="submit">
             </label>
         </form>
-        <div class="dropDown grid-area">
+        <div class="dropDown">
             <button class="dropDownByButton">Chose a color scheme</button>
             <div class="dropDown-content">
                 <div onclick="doChangeStyle('default')">Default</div>
-                <div onclick="doChangeStyle('blue')">Blue</div>
                 <div onclick="doChangeStyle('yellow')">Yellow</div>
+                <div onclick="doChangeStyle('blue')">Blue</div>
             </div>
         </div>
     </header>

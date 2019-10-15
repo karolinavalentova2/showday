@@ -72,5 +72,19 @@ th, td {
     height: 3rem;
 }
 
+/* header menu */
 td:nth-child(1) {min-width: 5rem;}
 td:nth-child(2) {min-width: 3rem;}
+
+input, .dropDownByButton {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: none;
+}
+
+#submit, .dropDownByButton {
+    background: #C9D11C;
+    color: #1C1E21;
+    font-weight: 600;
+}
+

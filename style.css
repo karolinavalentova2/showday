@@ -1,0 +1,76 @@
+/* color schemes */
+.default * {
+    --background: #1C1E21;
+    --font-color: white;
+    --contrast-color: #C9D11C;
+    --button-text: #1C1E21;
+    --hover-button-color: #1C1E21;
+    --drpdwn-color: #AFAF19;
+    --hover-text-color: black;
+}
+
+body {
+    background: #1C1E21;
+    background-size: 100vw;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+}
+
+header {
+    display: inline-flex;
+    width: 96vw;
+    margin: 1rem;
+    justify-content: flex-end;
+}
+
+form {
+    padding: 0 2rem;
+}
+
+main {
+    width: 68vw;
+    margin: 12rem auto;
+}
+
+.heading-container {display: block;}
+
+.heading-container h2 {
+    font-size: 4rem;
+    text-align: end;
+    margin-block-end: 0.5rem;
+}
+
+.heading-container h3 {
+    font-size: 2.5rem;
+    text-align: end;
+    margin-block-start: 0;
+}
+
+#currentDate, #currentTime {color: #C9D11C}
+
+table {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+    border-collapse: collapse;
+}
+
+.break {
+    width: 1rem;
+    height: 0.1rem;
+    color: white;
+    display: flex;
+    align-items: center;
+    background-color: white;
+}
+
+th, td {
+    border-bottom: 1px solid rgba(201,209,28,0.3);
+    height: 3rem;
+}
+
+td:nth-child(1) {min-width: 5rem;}
+td:nth-child(2) {min-width: 3rem;}

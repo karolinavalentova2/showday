@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My day</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=EB+Garamond:600&display=swap" rel="stylesheet">
+</head>
+<body onload="doStart()">
+    <header>
+        <h1 id="title">My Day!</h1>
+    </header>
+    <main>
+        <h2>Today is <span id="currentDate"></span></h2>
+        <h3 id="currentTime"></h3>
+        <table>
+            <tr>
+                <th>Time</th>
+                <th>Description</th>
+            </tr>
+            <tr></tr>
+        </table>
+        <form>
+            <label for="newTitle"></label>
+            <input type="text" name="newTitle" id="newTitle" placeholder="Change the title..">
+            <input type="submit" value="Submit">
+        </form>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

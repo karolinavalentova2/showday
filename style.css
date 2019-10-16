@@ -87,6 +87,7 @@ table {
 th, td {
     border-bottom: 1px solid var(--rgba-contrast);
     height: 3rem;
+    color: var(--contrast-color);
 }
 
 /* header menu */

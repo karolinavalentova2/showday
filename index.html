@@ -23,8 +23,6 @@
             </div>
         </div>
     </header>
-    <aside>
-    </aside>
     <main>
         <div class="heading-container">
             <h2>Today is <span id="currentDate"></span></h2>
@@ -34,21 +32,23 @@
             <table>
                 <tbody id="tasksTable"></tbody>
             </table>
-            <div class="weather">
-                <h3>Copenhagen, DK</h3>
-                <div class="weather-content">
-                    <p>Temperature: </p>
-                    <p id="temperature"></p>
+            <aside>
+                <div class="weather">
+                    <h3>Copenhagen, DK</h3>
+                    <div class="weather-content">
+                        <p>Temperature: </p>
+                        <p id="temperature"></p>
+                    </div>
+                    <div class="weather-content">
+                        <p>Humidity: </p>
+                        <p id="humidity"></p>
+                    </div>
+                    <div class="weather-content">
+                        <p>Status: </p>
+                        <p id="conditions"></p>
+                    </div>
                 </div>
-                <div class="weather-content">
-                    <p>Humidity: </p>
-                    <p id="humidity"></p>
-                </div>
-                <div class="weather-content">
-                    <p>Status: </p>
-                    <p id="conditions"></p>
-                </div>
-            </div>
+            </aside>
         </div>
     </main>
     <script src="script.js"></script>

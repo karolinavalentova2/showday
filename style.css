@@ -170,3 +170,56 @@ p {
     display: flex;
     width: 100%;
 }
+
+@media screen and (max-width: 1080px) {
+    main {
+        width: 77vw;
+        margin: 7rem auto;
+    }
+
+    aside {
+        display: flex;
+        justify-content: center;
+        margin-top: 3rem;
+    }
+
+    .weather {width: 15rem;}
+    .weather-content {width: 100%;}
+    .main-content {display: block;}
+}
+
+@media (max-width: 770px) {main {margin: 3rem auto;}}
+
+@media (max-width: 640px) {
+    .heading-container h2 {font-size: 2rem;}
+    .heading-container h3 {font-size: 1.5rem;}
+
+    .weather {width: 13rem;}
+    .weather > h3 {font-size: 1.7rem;}
+    p {font-size: 1.4rem;}
+
+    header {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: "input" "dropdown";
+        grid-row-gap: 1rem;
+    }
+
+    form {
+        grid-area: input;
+        justify-self: end;
+    }
+
+    .dropDown {
+        grid-area: dropdown;
+        justify-self: end;
+        padding: 0 2rem;
+    }
+
+    main {margin: 4rem auto;}
+    .heading-container {padding-bottom: 2rem;}
+}
+
+@media (max-width: 440px) {table {font-size: 1rem;}}
+@media (max-width: 320px) {#changeTitle {width: 9.5rem;}}

@@ -23,31 +23,41 @@
             </div>
         </div>
     </header>
+    <aside>
+    </aside>
     <main>
         <div class="heading-container">
             <h2>Today is <span id="currentDate"></span></h2>
             <h3 id="currentTime"></h3>
         </div>
-        <table>
-            <tbody>
-            <tr>
-                <td>Time</td>
-                <td><span class="break"></span></td>
-                <td>Description</td>
-            </tr>
-            <tr>
-                <td>Time</td>
-                <td><span class="break"></span></td>
-                <td>Description</td>
-            </tr>
-            <tr>
-                <td>Time</td>
-                <td><span class="break"></span></td>
-                <td>Description</td>
-            </tr>
-            </tbody>
-        </table>
+        <div class="main-content">
+            <table>
+                <tbody id="tasksTable"></tbody>
+            </table>
+            <div class="weather">
+                <h3>Copenhagen, DK</h3>
+                <div class="weather-content">
+                    <p>Temperature: </p>
+                    <p id="temperature"></p>
+                </div>
+                <div class="weather-content">
+                    <p>Humidity: </p>
+                    <p id="humidity"></p>
+                </div>
+                <div class="weather-content">
+                    <p>Status: </p>
+                    <p id="conditions"></p>
+                </div>
+            </div>
+        </div>
     </main>
     <script src="script.js"></script>
 </body>
+<template id="taskEntry">
+    <tr>
+        <td>Time</td>
+        <td><span class="break"></span></td>
+        <td>Description</td>
+    </tr>
+</template>
 </html>

@@ -26,6 +26,9 @@
     --rgba-contrast: #0c3457;
 }
 
+a {cursor: pointer;}
+a:hover {color: var(--contrast-color);}
+
 body {
     background: var(--background);
     background-size: 100vw;
@@ -185,6 +188,20 @@ p {
     width: 100%;
 }
 
+.main-content > div {width: 100%;}
+
+.tomorrow-container {
+    width: 445px;
+    margin: auto;
+}
+
+.tomorrow {
+    margin-top: 0.5rem;
+    border-bottom: 1px solid var(--contrast-color);
+    width: 30%;
+    float: right;
+}
+
 /*  -------- media queries */
 @media screen and (max-width: 1080px) {
     main {
@@ -195,7 +212,7 @@ p {
     aside {
         display: flex;
         justify-content: center;
-        margin-top: 3rem;
+        margin-top: 6rem;
     }
 
     .weather {width: 15.5rem;}
@@ -229,12 +246,87 @@ p {
     .dropDown {
         grid-area: dropdown;
         justify-self: end;
-        padding: 0 2rem;
+        margin: 0 2rem;
     }
 
     main {margin: 4rem auto;}
     .heading-container {padding-bottom: 2rem;}
 }
 
+@media (max-width: 580px) {
+    .tomorrow {
+        float: left;
+        font-size: 1rem;
+    }
+
+    .tomorrow-container {
+        width: 316px;
+        margin: 1rem auto;
+    }
+}
 @media (max-width: 440px) {table {font-size: 1rem;}}
 @media (max-width: 320px) {#changeTitle {width: 9.5rem;}}
+
+/* ----------------- loader source */
+.loader,
+.loader:before,
+.loader:after {
+    border-radius: 50%;
+    width: 2.5em;
+    height: 2.5em;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation: load7 1.8s infinite ease-in-out;
+    animation: load7 1.8s infinite ease-in-out;
+}
+.loader {
+    color: var(--contrast-color);
+    font-size: 10px;
+    margin: 80px auto;
+    position: relative;
+    text-indent: -9999em;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-animation-delay: -0.16s;
+    animation-delay: -0.16s;
+}
+.loader:before,
+.loader:after {
+    content: '';
+    position: absolute;
+    top: 0;
+}
+.loader:before {
+    left: -3.5em;
+    -webkit-animation-delay: -0.32s;
+    animation-delay: -0.32s;
+}
+.loader:after {
+    left: 3.5em;
+}
+@-webkit-keyframes load7 {
+    0%,
+    80%,
+    100% {
+        box-shadow: 0 2.5em 0 -1.3em;
+    }
+    40% {
+        box-shadow: 0 2.5em 0 0;
+    }
+}
+@keyframes load7 {
+    0%,
+    80%,
+    100% {
+        box-shadow: 0 2.5em 0 -1.3em;
+    }
+    40% {
+        box-shadow: 0 2.5em 0 0;
+    }
+}
+
+
+.d-none {
+    display: none!important;
+}

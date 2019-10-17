@@ -29,9 +29,14 @@
             <h3 id="currentTime"></h3>
         </div>
         <div class="main-content">
-            <table>
-                <tbody id="tasksTable"></tbody>
-            </table>
+            <div>
+                <table>
+                    <tbody id="tasksTable"></tbody>
+                </table>
+                <div class="tomorrow-container">
+                    <a onclick="showTomorrowsTasksData()"><p class="tomorrow">Tomorrow <span><img src="arrow.png" alt=""></span></p></a>
+                </div>
+            </div>
             <aside>
                 <div class="weather">
                     <h3>Copenhagen, DK</h3>
@@ -51,6 +56,7 @@
             </aside>
         </div>
     </main>
+    <div class="loader" id="loader">Loading...</div>
     <script src="script.js"></script>
 </body>
 <template id="taskEntry">

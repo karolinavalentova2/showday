@@ -71,7 +71,7 @@ function doGetCurrentWeather() {
             if(Array.isArray(weather)) {
                 weather.forEach((condition) => {
                     if(conditionsElement.innerText === '') conditionsElement.innerText += condition['main'] ; // Will look like ' Fog'
-                    else conditionsElement.innerText += condition['main'] ; // Will look like ' Fog , cold, rainy'
+                    else conditionsElement.innerText += ', ' + condition['main'] ; // Will look like ' Fog , cold, rainy'
                 })
             } else {
                 conditionsElement.innerText = weather['main'];
@@ -115,21 +115,49 @@ async function processTasks() {
     }
 }
 
+function showTomorrowsTasksData() {
+    toggleLoader();
+    const taskElement = document.getElementById('tasksTable');
+    const taskEntryTemplate = document.getElementById('taskEntry');
+
+    deleteChilds(taskElement);
+
+    tasksData.forEach((taskEntry) => {
+        let temporaryTaskTemplate = taskEntryTemplate.content.cloneNode(true);
+        const newTaskEntry = buildTaskEntry(temporaryTaskTemplate, taskEntry, true);
+
+        if(newTaskEntry) taskElement.appendChild(newTaskEntry);
+    });
+
+    toggleLoader();
+}
+
 function showTasksData() {
     const taskElement = document.getElementById('tasksTable');
     const taskEntryTemplate = document.getElementById('taskEntry');
 
     tasksData.forEach((taskEntry) => {
-
         let temporaryTaskTemplate = taskEntryTemplate.content.cloneNode(true);
         const newTaskEntry = buildTaskEntry(temporaryTaskTemplate, taskEntry);
 
         if(newTaskEntry) taskElement.appendChild(newTaskEntry);
     });
+    toggleLoader();
 }
 
-function buildTaskEntry(element, taskData) {
-    if(taskData.day === new Date().toLocaleDateString('en-GB', { weekday: 'long'})){
+function buildTaskEntry(element, taskData, showTomorrowsTasks = false) {
+    if(showTomorrowsTasks) {
+        let tomorrow = new Date(new Date().setDate(new Date().getDate() + 1));
+
+        tomorrow = tomorrow.toLocaleDateString('en-GB', { weekday: 'long'});
+
+        if(taskData.day === tomorrow){
+            element.firstElementChild.children[0].textContent = taskData.time;
+            element.firstElementChild.children[2].textContent = taskData.description;
+
+            return element;
+        }
+    } else if(taskData.day === new Date().toLocaleDateString('en-GB', { weekday: 'long'})){
         element.firstElementChild.children[0].textContent = taskData.time;
         element.firstElementChild.children[2].textContent = taskData.description;
 
@@ -143,4 +171,10 @@ function deleteChilds(parentElement) {
         parentElement.removeChild(child);
         child = parentElement.lastElementChild;
     }
+}
+
+
+function toggleLoader() {
+    const loader = document.getElementById('loader')
+    loader.classList.toggle('d-none');
 }
